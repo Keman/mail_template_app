@@ -1,0 +1,14 @@
+<%= link_to "Edit", edit_account_path(@account) %>
+<%= link_to "Delete", account_path(@account), method: :delete, data: {confirm: "You sure?"} %>
+
+<h3>Email:</h3>
+<p><%= @account.email %></p>
+
+<h3>Name:</h3>
+<p><%= @account.name %></p>
+
+<h3>Balance:</h3>
+<p><%= @account.balance %></p>
+
+<h3>Currency:</h3>
+<p><%= @account.currency %></p>

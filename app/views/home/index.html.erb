@@ -1,0 +1,14 @@
+<%= link_to "New message", new_message_path %>
+<%= link_to "New account", new_account_path %>
+|
+<%= link_to "All accounts", accounts_path %>
+
+<% @messages.each do |message| %>
+  <h3><%= link_to "Message with titile: #{message.title}", message_path(message) %></h3>
+  <%= form_tag("/deliver_mail", method: "post") do %>
+    <%= label_tag("Deliver to: ") %>
+    <%= select_tag(:account, options_for_select(@accounts.map {|a| [a.name + " - " + a.email, a.id]})) %>
+    <%= hidden_field_tag(:message, message.id) %>
+    <%= submit_tag("Send") %>
+  <% end %>
+<% end %>

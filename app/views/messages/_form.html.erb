@@ -1,0 +1,11 @@
+<%= form_for @message do |f| %>
+  <p>
+    <%= label_tag(:title, "Title") %>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= label_tag(:text, "Text") %>
+    <%= f.text_area :text %>
+  </p>
+  <%= f.submit "Save" %>
+<% end %>
